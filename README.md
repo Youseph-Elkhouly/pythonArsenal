@@ -84,10 +84,3 @@ Bitwise operations and bit manipulation techniques.
 ### Math & Geometry
 Mathematical algorithms and geometric problem solving.
 
-## 🤝 Contributing
-
-Feel free to contribute by adding more examples or improving existing ones!
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
