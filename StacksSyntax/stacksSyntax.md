@@ -47,6 +47,15 @@ class Stack:
     def get_all(self):
         return self.items.copy()
     
+    def sort(self, key=None, reverse=False):
+        """Sort the stack items in-place.
+        
+        Args:
+            key: Optional function to extract comparison key from each item
+            reverse: If True, sort in descending order (default: False)
+        """
+        self.items.sort(key=key, reverse=reverse)
+    
     def __str__(self):
         return f"Stack({self.items})"
     
@@ -80,6 +89,7 @@ self.items == []          # Check if empty
 self.items.clear()        # Clear stack
 item in self.items        # Check if contains
 self.items.copy()         # Get copy of stack
+self.items.sort()         # Sort stack items
 ```
 
 ## Core Operations
@@ -119,6 +129,7 @@ stack.pop()
 stack.peek()
 stack.is_empty()
 stack.size()
+stack.sort()
 ```
 
 ### Variable Assignment
@@ -721,6 +732,33 @@ print(stack.is_empty()) # False
 # Pop items
 while not stack.is_empty():
     print(stack.pop())  # 3, 2, 1
+```
+
+### Stack Sorting Example
+```python
+# Create stack with unsorted items
+stack = Stack()
+stack.push(3)
+stack.push(1)
+stack.push(4)
+stack.push(2)
+
+print(f"Before sort: {stack}")  # Stack([3, 1, 4, 2])
+
+# Sort the stack
+stack.sort()
+print(f"After sort: {stack}")   # Stack([1, 2, 3, 4])
+
+# Sort in descending order
+stack.sort(reverse=True)
+print(f"Descending: {stack}")   # Stack([4, 3, 2, 1])
+
+# Sort with custom key function
+stack.push("apple")
+stack.push("banana")
+stack.push("cherry")
+stack.sort(key=len)  # Sort by string length
+print(f"By length: {stack}")   # Stack(['apple', 'banana', 'cherry'])
 ```
 
 ### Error Handling Example
